@@ -1,30 +1,46 @@
-/* 
-  1. Store correct answers
-   - When quiz begins, no answers are correct
-*/
+let total = 0;
+let rank;
+const main = document.querySelector('main');
+
+const one = prompt("Which planet do we live in?");
+  if(one.toUpperCase() === "EARTH"){
+    total += 1;
+  }
+const two = prompt("What is the last name of the first President of the United States?");
+  if(two.toUpperCase() === "WASHINGTON"){
+    total += 1;
+  }
+const three = prompt("How many states are there in the United States?");
+  if(three.toUpperCase() === "FIFTY" || +three === 50){
+    total += 1;
+  }
+const four = prompt("What is the capital of Germany?");
+  if(four.toUpperCase() === "BERLIN"){
+    total += 1;
+  }
+const five = prompt("What is the capital of Japan?");
+  if(five.toUpperCase() === "TOKYO"){
+    total += 1;
+  }
+
+if (total === 5){
+    rank = "Gold";
+  } 
+else if (total >= 3) {
+    rank = "Silver";
+  }
+else if(total >= 2) {
+    rank = "Bronze";
+  }
+else {
+    rank = "No crown";
+  }
+
+main.innerHTML = `
+  <h2> You got ${total} out of 5 questions correct.</h2>
+  <p> Crown earned: <strong>${rank}</strong></p>`;
 
 
-// 2. Store the rank of a player
 
 
-// 3. Select the <main> HTML element
-
-
-/*
-  4. Ask at least 5 questions
-   - Store each answer in a variable
-   - Keep track of the number of correct answers
-*/
-
-
-/*
-  5. Rank player based on number of correct answers
-   - 5 correct = Gold
-   - 3-4 correct = Silver
-   - 1-2 correct = Bronze
-   - 0 correct = No crown
-*/
-
-
-// 6. Output results to the <main> element
 
